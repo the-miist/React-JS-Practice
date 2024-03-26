@@ -2,6 +2,8 @@ import { useState } from 'react';
 import './App.css';
 import ProductCard from './components/ProductCard';
 import Counter from './components/Counter';
+import FormValidation from './components/FormValidtaion';
+import FormValUsingRef from './components/FormValUsingRef';
 
 function App() {
   let productDetails = [
@@ -22,7 +24,7 @@ function App() {
 
   return (
     <>
-      <input 
+      {/* <input 
         onChange={(event)=>{
           searchProduct(event);
         }}
@@ -36,7 +38,10 @@ function App() {
       }
     </div>
 
-      <Counter />
+      <Counter /> */}
+
+      {/* <FormValidation /> */}
+      <FormValUsingRef />
 
     </>
   );
