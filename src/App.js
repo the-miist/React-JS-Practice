@@ -4,6 +4,10 @@ import ProductCard from './components/ProductCard';
 import Counter from './components/Counter';
 import FormValidation from './components/FormValidtaion';
 import FormValUsingRef from './components/FormValUsingRef';
+import SideEffects from './components/SideEffects';
+import ProductList from './components/ProductList';
+
+import logo from "./logo.svg";
 
 function App() {
   let productDetails = [
@@ -41,8 +45,12 @@ function App() {
       <Counter /> */}
 
       {/* <FormValidation /> */}
-      <FormValUsingRef />
+      {/* <FormValUsingRef /> */}
 
+      {/* <SideEffects /> */}
+      <ProductList />
+      {/* <a className='App-header' href="https://google.com">google</a>
+      <img src={logo} /> */}
     </>
   );
 }
