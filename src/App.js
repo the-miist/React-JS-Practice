@@ -6,8 +6,14 @@ import FormValidation from './components/FormValidtaion';
 import FormValUsingRef from './components/FormValUsingRef';
 import SideEffects from './components/SideEffects';
 import ProductList from './components/ProductList';
+import Register from './components/Register';
+import Login from "./components/Login";
+import Home from "./components/Home"
 
 import logo from "./logo.svg";
+import Navigation from './components/Navigation';
+import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
+import NotFound from './components/NotFound';
 
 function App() {
   let productDetails = [
@@ -48,9 +54,23 @@ function App() {
       {/* <FormValUsingRef /> */}
 
       {/* <SideEffects /> */}
-      <ProductList />
       {/* <a className='App-header' href="https://google.com">google</a>
       <img src={logo} /> */}
+
+      <BrowserRouter>
+        <Navigation />
+        <Routes>
+          <Route path="/" element={<Navigate to="/home" />} />
+          <Route path='/home' element={<Home />} />
+          <Route path='/products' element={<ProductList />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/login" element={<Login />} />
+          <Route path='*' element={<NotFound />}/>
+        </Routes>
+      </BrowserRouter>
+
+      {/* <ProductList /> */}
+
     </>
   );
 }

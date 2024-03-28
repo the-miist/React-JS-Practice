@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import Product from "./Product";
 import axios from "axios";
+import Loader from "./Loader";
 
 export default function ProductList() {
 
@@ -22,9 +23,10 @@ export default function ProductList() {
     return(
         <div style={{display:"flex", justifyContent:"center", flexWrap:"wrap"}}>
             {
-                products.map((product)=>{
+
+                products.length>0 ?  products.map((product)=>{
                     return <Product details={product} key={product.id}/>
-                })
+                }) : <Loader />
             }
         </div>
     )
