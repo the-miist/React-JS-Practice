@@ -9,6 +9,7 @@ import ProductList from './components/ProductList';
 import Register from './components/Register';
 import Login from "./components/Login";
 import Home from "./components/Home"
+import ProductDetails from "./components/ProductDetails"
 
 import logo from "./logo.svg";
 import Navigation from './components/Navigation';
@@ -65,6 +66,8 @@ function App() {
           <Route path='/products' element={<ProductList />} />
           <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/productdetails" element={<ProductDetails/>} />
+          <Route path='/home/:name/:surname' element={<Home />} />
           <Route path='*' element={<NotFound />}/>
         </Routes>
       </BrowserRouter>

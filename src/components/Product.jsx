@@ -1,17 +1,26 @@
 import { Button, Card, ListGroup } from "react-bootstrap";
+import { useNavigate } from "react-router-dom";
 
 export default function Product(props) {
 
+    const navigate = useNavigate();
+
     return(
-    <Card style={{ width: '18rem', margin:"1rem"}} >
+    <Card style={{ width: '18rem', margin:"1rem"}} onClick={()=>{
+      navigate("/productdetails", {
+        state : {
+          product: props.details
+        }
+      })
+    }} >
       <div style={{display:"flex", justifyContent:"center"}}>
         <Card.Img style={{width:"15rem", height:"20rem"}} variant="top" src={props.details.image} />
       </div>
       <Card.Body>
         <Card.Title>{props.details.title}</Card.Title>
-        <Card.Text>
+        {/* <Card.Text>
           {props.details.description}
-        </Card.Text>
+        </Card.Text> */}
       </Card.Body>
       <ListGroup className="list-group-flush">
         <ListGroup.Item>Category: {props.details.category}</ListGroup.Item>
